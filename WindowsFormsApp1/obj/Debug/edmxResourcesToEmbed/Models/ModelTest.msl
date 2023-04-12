@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище DBEventModelContainer" CdmEntityContainer="DBEventEntities">
+    <EntitySetMapping Name="Gender">
+      <EntityTypeMapping TypeName="DBEventModel.Gender">
+        <MappingFragment StoreEntitySet="Gender">
+          <ScalarProperty Name="GenderID" ColumnName="GenderID" />
+          <ScalarProperty Name="GenderName" ColumnName="GenderName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Role">
+      <EntityTypeMapping TypeName="DBEventModel.Role">
+        <MappingFragment StoreEntitySet="Role">
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User">
+      <EntityTypeMapping TypeName="DBEventModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="NumberId" ColumnName="NumberId" />
+          <ScalarProperty Name="UserRoleID" ColumnName="UserRoleID" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="GenderID" ColumnName="GenderID" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Event">
+      <EntityTypeMapping TypeName="DBEventModel.Event">
+        <MappingFragment StoreEntitySet="Event">
+          <ScalarProperty Name="EventId" ColumnName="EventId" />
+          <ScalarProperty Name="EventName" ColumnName="EventName" />
+          <ScalarProperty Name="EventDirection" ColumnName="EventDirection" />
+          <ScalarProperty Name="EventDate" ColumnName="EventDate" />
+          <ScalarProperty Name="EventTime" ColumnName="EventTime" />
+          <ScalarProperty Name="EventDuration" ColumnName="EventDuration" />
+          <ScalarProperty Name="EventPhoto" ColumnName="EventPhoto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище DBEventModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "DBEvent.dbo.Event" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+  <EntityType Name="Event">
+    <Key>
+      <PropertyRef Name="EventId" />
+      <PropertyRef Name="EventName" />
+      <PropertyRef Name="EventDirection" />
+      <PropertyRef Name="EventDate" />
+      <PropertyRef Name="EventTime" />
+      <PropertyRef Name="EventDuration" />
+    </Key>
+    <Property Name="EventId" Type="int" Nullable="false" />
+    <Property Name="EventName" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="EventDirection" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="EventDate" Type="date" Nullable="false" />
+    <Property Name="EventTime" Type="time" Precision="7" Nullable="false" />
+    <Property Name="EventDuration" Type="int" Nullable="false" />
+    <Property Name="EventPhoto" Type="image" />
+  </EntityType>
+  <EntityType Name="Gender">
+    <Key>
+      <PropertyRef Name="GenderID" />
+    </Key>
+    <Property Name="GenderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GenderName" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Name="RoleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleName" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="NumberId" />
+    </Key>
+    <Property Name="NumberId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserRoleID" Type="int" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="GenderID" Type="int" Nullable="false" />
+    <Property Name="Phone" Type="char" MaxLength="18" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="Birthday" Type="date" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_User_Gender">
+    <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="GenderID" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="GenderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Role">
+    <End Role="Role" Type="Self.Role" Multiplicity="1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="RoleID" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="UserRoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище DBEventModelContainer">
+    <EntitySet Name="Gender" EntityType="Self.Gender" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Event" EntityType="Self.Event" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Event].[EventId] AS [EventId], 
+    [Event].[EventName] AS [EventName], 
+    [Event].[EventDirection] AS [EventDirection], 
+    [Event].[EventDate] AS [EventDate], 
+    [Event].[EventTime] AS [EventTime], 
+    [Event].[EventDuration] AS [EventDuration], 
+    [Event].[EventPhoto] AS [EventPhoto]
+    FROM [dbo].[Event] AS [Event]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_User_Gender" Association="Self.FK_User_Gender">
+      <End Role="Gender" EntitySet="Gender" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Role" Association="Self.FK_User_Role">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

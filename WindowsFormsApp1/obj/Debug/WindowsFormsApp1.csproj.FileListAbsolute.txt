@@ -1,0 +1,16 @@
+C:\Users\Anya\Desktop\test2\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\Anya\Desktop\test2\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\Anya\Desktop\test2\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\Anya\Desktop\test2\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
+C:\Users\Anya\Desktop\test2\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.SuggestedBindingRedirects.cache
+C:\Users\Anya\Desktop\test2\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\Anya\Desktop\test2\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+C:\Users\Anya\Desktop\test2\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+C:\Users\Anya\Desktop\test2\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\Anya\Desktop\test2\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\Anya\Desktop\test2\WindowsFormsApp1\bin\Debug\EntityFramework.dll
+C:\Users\Anya\Desktop\test2\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Anya\Desktop\test2\WindowsFormsApp1\bin\Debug\EntityFramework.xml
+C:\Users\Anya\Desktop\test2\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Anya\Desktop\test2\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FormAuth.resources
+C:\Users\Anya\Desktop\test2\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CopyComplete
